@@ -41,3 +41,7 @@ Set `emacs-sounds-bell-sound`, `emacs-sounds-window-change-sound` and `emacs-sou
         "/home/ismail/sounds/sound1.wav")
 
 You just need to remember that the sound files must be '.wav' audio files.
+
+## Dependencies
+
+* [sound-wav](https://github.com/syohex/emacs-sound-wav)
