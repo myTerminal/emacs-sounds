@@ -64,17 +64,24 @@
   nil)
 
 (defun emacs-sounds-play-ring-bell-sound ()
+  "Plays ring bell sound."
   (emacs-sounds--play-sound emacs-sounds-bell-sound))
 
 (defun emacs-sounds-play-window-change-sound ()
+  "Plays window change sound."
   (emacs-sounds--play-sound emacs-sounds-window-change-sound))
 
 (defun emacs-sounds-play-find-file-sound ()
+  "Plays file change sound."
   (emacs-sounds--play-sound emacs-sounds-find-file-sound))
+
+(defun emacs-sounds--play-sound (sound-file)
+  "Plays the specified sound file."
+  (cond ((not (null sound-file)) (sound-wav-play sound-file))))
 
 ;;;###autoload
 (define-minor-mode emacs-sounds-mode
-  "Toggle emacs-sounds-mode"
+  "Toggle emacs-sounds-mode."
   :init-value nil
   :global t
   :lighter " emacs-sounds"
@@ -100,9 +107,6 @@
                           'emacs-sounds-play-find-file-sound)
 
              (message "Emacs is now quite again!")))))
-
-(defun emacs-sounds--play-sound (sound-file)
-  (cond ((not (null sound-file)) (sound-wav-play sound-file))))
 
 (provide 'emacs-sounds)
 
